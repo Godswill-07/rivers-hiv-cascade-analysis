@@ -2,7 +2,7 @@
 
 An end-to-end data analytics project tracking HIV testing, treatment, and viral suppression outcomes in Rivers State, Nigeria — built on real PEPFAR public health data (2016-2025).
 
-**[View the interactive dashboard →](https://app.powerbi.com/view?r=eyJrIjoiN2VkNGZjOGUtN2Q5Ni00ZTNkLTlhZTgtMzdhZGY4NDI5YjUzIiwidCI6ImVmNDcyYTAzLWQ0ZmQtNDBiMi1hOTBjLTUxMGU3NDg1ZDlmNCJ9" frameborder="0" allowFullScreen="true"></iframe>)** *(add your Power BI published link here)*
+**[View the interactive dashboard →](https://app.powerbi.com/view?r=eyJrIjoiN2VkNGZjOGUtN2Q5Ni00ZTNkLTlhZTgtMzdhZGY4NDI5YjUzIiwidCI6ImVmNDcyYTAzLWQ0ZmQtNDBiMi1hOTBjLTUxMGU3NDg1ZDlmNCJ9" frameborder="0" allowFullScreen="true"></iframe>)
 
 ![Dashboard Overview](HIV_Dashboard1.png)
 
