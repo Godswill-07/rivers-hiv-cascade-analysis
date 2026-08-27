@@ -69,7 +69,7 @@ All core business logic and reporting measures reside within the HIV_Cascade_fac
 ## 3. Dynamic Visual Control
 - Cascade_Value: Leverages a SWITCH statement mapped against Dim_Indicator[Cascade_Order] to dynamically toggle values. This acts as the backbone measure for the Funnel Chart, ensuring that each stage of the cascade renders its respective distinct indicator.
 
-To view the complete, raw DAX block for direct integration, refer to [`DAX_MEASURES`](dax_measures) in the repository structure.
+To view the complete, raw DAX block for direct integration, refer to [`DAX_MEASURES`](dax_measures.md) in the repository structure.
 
 ## Data Access
 
