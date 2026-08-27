@@ -29,7 +29,7 @@ This repo documents the full pipeline that found, diagnosed, and corrected that 
 | 3. Modeling & visualization | Power BI | Star schema (fact table + 3 dimension tables), DAX measures, 4-page interactive dashboard |
 
 ## Data Cleaning & Pipeline Architecture
-The raw PEPFAR MER dataset required extensive programmatic reshaping and data hygiene checks before it could power the analytical model. The full pipeline is written in Python (cleaning_pipeline.py) and automates the following steps:
+The raw PEPFAR MER dataset required extensive programmatic reshaping and data hygiene checks before it could power the analytical model. The full pipeline is written in Python [`Cleaning_Pipeline`](cleaning_pipeline.py) and automates the following steps:
 
 Pipeline Breakdown
 - Wide-to-Long Reshaping: Separated static metadata and identity columns (id_columns) from historical reporting periods, melting the wide historical time columns into a clean, normalized structure.
