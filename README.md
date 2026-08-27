@@ -48,6 +48,29 @@ Pipeline Breakdown
 
 Full write-up of every data quality issue found and how it was fixed: [`DATA_QUALITY_LOG.md`](DATA_QUALITY_LOG.md)
 
+## DAX Measures Reference
+
+All core business logic and reporting measures reside within the HIV_Cascade_fact table and respond dynamically to filters from Dim_Indicator, Dim_Age, and DateTable.
+
+## Overview of Core Measures1. 
+
+## 1. Volume & Count Measures
+- Total_Tested: Calculates cumulative individuals tested (HTS_TST), restricted to the "Narrow" age family to prevent the double-counting issue discovered in overlapping broad age brackets.  
+- Total_Positive: Evaluates total positive results (HTS_TST_POS) filtered by narrow age categories.
+-  Total_New_Treatment: Tracks newly initiated patients on treatment (TX_NEW).
+-  Total_Current_Treatment: Computes active patients (TX_CURR). Crucially restricted to the latest year (MAX(Year)) because TX_CURR is a point-in-time snapshot rather than a cumulative flow; summing it across multiple years would incorrectly duplicate active patients.
+
+ ## 2. Performance & Rate Metrics
+ - Avg_Suppression_Rate: Averages the pre-calculated viral load suppression percentages (TX_PVLS_Suppression_Rate).
+ - UNAIDS_Target: Hardcoded benchmark static variable set to the official UNAIDS 95% threshold.
+ - Gap_to_Target: Evaluates the percentage point variance between the current average suppression rate and the UNAIDS target.
+ - Positive_to_Treatment_Rate & Testing_to_Positive_Rate: Safe division measures (DIVIDE) utilizing error handling to track conversion efficiency across the clinical cascade stages.
+
+## 3. Dynamic Visual Control
+- Cascade_Value: Leverages a SWITCH statement mapped against Dim_Indicator[Cascade_Order] to dynamically toggle values. This acts as the backbone measure for the Funnel Chart, ensuring that each stage of the cascade renders its respective distinct indicator.
+
+To view the complete, raw DAX block for direct integration, refer to [`DAX_MEASURES`](dax_measures) in the repository structure.
+
 ## Data Access
 
 This project uses PEPFAR's public **Monitoring, Evaluation, and Reporting (MER) Clinical Cascade dataset**, filtered to Rivers State, Nigeria.
