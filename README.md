@@ -4,7 +4,7 @@ An end-to-end data analytics project tracking HIV testing, treatment, and viral 
 
 **[View the interactive dashboard →](#)** *(add your Power BI published link here)*
 
-![Dashboard Overview](images/dashboard_overview.png)
+![Dashboard Overview](HIV_Dashboard1.PNG)
 
 ---
 
