@@ -29,7 +29,7 @@ This repo documents the full pipeline that found, diagnosed, and corrected that 
 | 3. Modeling & visualization | Power BI | Star schema (fact table + 3 dimension tables), DAX measures, 4-page interactive dashboard |
 
 ## Data Cleaning & Pipeline Architecture
-The raw PEPFAR MER dataset required extensive programmatic reshaping and data hygiene checks before it could power the analytical model. The full pipeline is written in Python (notebooks/cleaning_pipeline.py) and automates the following steps:
+The raw PEPFAR MER dataset required extensive programmatic reshaping and data hygiene checks before it could power the analytical model. The full pipeline is written in Python (cleaning_pipeline.py) and automates the following steps:
 
 Pipeline Breakdown
 - Wide-to-Long Reshaping: Separated static metadata and identity columns (id_columns) from historical reporting periods, melting the wide historical time columns into a clean, normalized structure.
@@ -44,7 +44,7 @@ Pipeline Breakdown
 
 - Schema Unification & Export: Recombined core clinical cascade metrics with the newly derived suppression rates, trimmed unnecessary identifiers, and exported an analysis-ready flat file (data/cleaned/rivers_hiv_cascade_final.csv).
 
- ## Detailed Log: For a granular breakdown of every data quality anomaly encountered—including floating-point ID corruption and multi-level age-band double-counting—see DATA_QUALITY_LOG.md.
+ Detailed Log: For a granular breakdown of every data quality anomaly encountered—including floating-point ID corruption and multi-level age-band double-counting—see DATA_QUALITY_LOG.md.
 
 Full write-up of every data quality issue found and how it was fixed: [`DATA_QUALITY_LOG.md`](DATA_QUALITY_LOG.md)
 
