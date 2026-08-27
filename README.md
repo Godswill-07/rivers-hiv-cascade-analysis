@@ -90,7 +90,7 @@ Raw data is not included in this repo due to file size — download instructions
 - 2016-2017 have thin reporting density (fewer than 20 data points per quarter)
 - 2025 includes Q4 results only, per PEPFAR's own data release guidance
 - TX_RET (standard retention indicator) is not present in current MER guidance; TX_CURR and TX_NET_NEW are used as proxies
-- Full limitations documented in [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
+- Full limitations documented in [`METHODOLOGY`](METHODOLOGY.md)
 
 ## About Me
 
