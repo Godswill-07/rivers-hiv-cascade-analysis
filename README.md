@@ -28,26 +28,7 @@ This repo documents the full pipeline that found, diagnosed, and corrected that 
 | 2. Reshaping & cleaning | Python (pandas) | Wide→long reshape, Excel date-corruption recovery for age bands, numerator/denominator suppression rate calculation |
 | 3. Modeling & visualization | Power BI | Star schema (fact table + 3 dimension tables), DAX measures, 4-page interactive dashboard |
 
-Full write-up of every data quality issue found and how it was fixed: [`docs/DATA_QUALITY_LOG.md`](docs/DATA_QUALITY_LOG.md)
-
-## Repository Structure
-
-```
-rivers-hiv-cascade-analysis/
-├── data/
-│   ├── raw/              # Original PEPFAR MER export (not included — see Data Access below)
-│   └── cleaned/          # Final cleaned dataset used in the dashboard
-├── notebooks/
-│   └── cleaning_pipeline.py   # Full Python cleaning pipeline, documented step by step
-├── powerbi/
-│   ├── theme.json         # Custom Power BI theme
-│   └── dax_measures.md    # All DAX measures with explanations
-├── docs/
-│   ├── DATA_QUALITY_LOG.md    # Every data issue found and how it was corrected
-│   └── METHODOLOGY.md         # Cascade definitions, indicator mapping, known limitations
-├── images/                # Dashboard screenshots
-└── README.md
-```
+Full write-up of every data quality issue found and how it was fixed: [`DATA_QUALITY_LOG.md`](DATA_QUALITY_LOG.md)
 
 ## Data Access
 
