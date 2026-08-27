@@ -28,6 +28,24 @@ This repo documents the full pipeline that found, diagnosed, and corrected that 
 | 2. Reshaping & cleaning | Python (pandas) | Wide→long reshape, Excel date-corruption recovery for age bands, numerator/denominator suppression rate calculation |
 | 3. Modeling & visualization | Power BI | Star schema (fact table + 3 dimension tables), DAX measures, 4-page interactive dashboard |
 
+## Data Cleaning & Pipeline Architecture
+The raw PEPFAR MER dataset required extensive programmatic reshaping and data hygiene checks before it could power the analytical model. The full pipeline is written in Python (notebooks/cleaning_pipeline.py) and automates the following steps:
+
+Pipeline Breakdown
+- Wide-to-Long Reshaping: Separated static metadata and identity columns (id_columns) from historical reporting periods, melting the wide historical time columns into a clean, normalized structure.
+
+- Period De-duplication & Extraction: Dropped null reporting periods and parsed the composite period string into distinct categorical attributes (Year, Quarter, and reporting Type [Result vs. Target]).
+
+- Pivoting Viral Suppression Metrics (TX_PVLS): Isolated the viral load suppression indicator, pivoting the separately reported Numerator (N) and Denominator (D) rows onto a single row per demographic segment to enable accurate rate calculations.
+
+- Recovery of Excel-Corrupted Age Bands: Handled silent data corruption caused by spreadsheet software converting text-based age ranges (like 10-14) into calendar dates, applying a custom extraction function to recover valid string identifiers.
+
+- Suppression Rate Derivation: Calculated the official multi-year viral suppression percentage ([N / D] * 100) rounded to two decimal places.
+
+- Schema Unification & Export: Recombined core clinical cascade metrics with the newly derived suppression rates, trimmed unnecessary identifiers, and exported an analysis-ready flat file (data/cleaned/rivers_hiv_cascade_final.csv).
+
+ ## Detailed Log: For a granular breakdown of every data quality anomaly encountered—including floating-point ID corruption and multi-level age-band double-counting—see DATA_QUALITY_LOG.md.
+
 Full write-up of every data quality issue found and how it was fixed: [`DATA_QUALITY_LOG.md`](DATA_QUALITY_LOG.md)
 
 ## Data Access
